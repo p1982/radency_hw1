@@ -3,10 +3,10 @@ class API {
         this.baseUrl = "./notes.json"
     }
     async getData(url) {
-        const res = await fetch(`${this.url}/${url}`)
+        const res = await fetch(`${this.baseUrl}`)
         if (res.ok) {
             const data = await res.json()
-            return data
+            return data.notes
         }
     }
     async createData(url, note) {
@@ -14,7 +14,7 @@ class API {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
-              },
+            },
             body: JSON.stringify(note),
         })
         if (res.ok) {
@@ -27,7 +27,7 @@ class API {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
-              },
+            },
             body: JSON.stringify(note),
         })
         if (res.ok) {
@@ -40,7 +40,7 @@ class API {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
-              },
+            },
         })
         if (res.ok) {
             const data = await res.json()
@@ -48,3 +48,5 @@ class API {
         }
     }
 }
+
+export default new API()
