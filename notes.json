@@ -1,0 +1,76 @@
+{
+    "notes": [
+        {
+            "id": 1,
+            "icon": "<img class='icon' src='./img/icons/task.png' alt='task icon'/>",
+            "name": "Note 1",
+            "created": "2023-07-31T10:00:00",
+            "category": "Task",
+            "content": "This is the content of Note 1",
+            "dates": ["2023-09-01", "2023-09-03"]
+        },
+        {
+            "id": 2,
+            "name": "Note 2",
+            "icon": "<img class='icon' src='./img/icons/quote.png' alt='quote icon'/>",
+            "created": "2023-06-25T11:30:00",
+            "category": "Quote",
+            "content": "This is the content of Note 2",
+            "dates": ["2023-08-02", "2023-08-04"]
+        },
+        {
+            "id": 3,
+            "icon": "<img class='icon' src='./img/icons/idea.png' alt='idea icon'/>",
+            "name": "Note 3",
+            "created": "2023-07-15T14:15:00",
+            "category": "Idea",
+            "content": "This is the content of Note 3",
+            "dates": ["2023-08-26"]
+        },
+        {
+            "id": 4,
+            "name": "Note 4",
+            "icon": "<img class='icon' src='./img/icons/quote.png' alt='quote icon'/>",
+            "created": "2023-075-28T21:15:00",
+            "category": "Quote",
+            "content": "This is the content of Note 4",
+            "dates": ["2023-08-04"]
+        },
+        {
+            "id": 5,
+            "icon": "<img class='icon' src='./img/icons/task.png' alt='task icon'/>",
+            "name": "Note 5",
+            "created": "2023-07-01T14:00:00",
+            "category": "Task",
+            "content": "This is the content of Note 5",
+            "dates": ["2023-08-17"]
+        },
+        {
+            "id": 6,
+            "icon": "<img class='icon' src='./img/icons/onmind.png' alt='on mind icon'/>",
+            "name": "Note 6",
+            "created": "2023-07-22T00:15:00",
+            "category": "Random Thought",
+            "content": "This is the content of Note 6",
+            "dates": ["2023-08-12"]
+        },
+        {
+            "id": 7,
+            "name": "Note 7",
+            "icon": "<img class='icon' src='./img/icons/idea.png' alt='idea icon'/>",
+            "created": "2023-07-07T13:15:00",
+            "category": "Task",
+            "content": "This is the content of Note 7",
+            "dates": ["2023-09-01", "2023-09-03"]
+        },
+        {
+            "id": 8,
+            "icon": "<img class='icon' src='./img/icons/idea.png' alt='idea icon'/>",
+            "name": "Note 8",
+            "created": "2023-08-01T13:15:00",
+            "category": "Idea",
+            "content": "This is the content of Note 8",
+            "dates": ["2023-10-01", "2023-11-03"]
+        }
+    ]
+}

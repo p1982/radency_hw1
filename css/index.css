@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notes-item {
+    background-color: rgb(150, 168, 252);
+    display: grid;
+    grid-template-columns: repeat(39, 1fr);
+    gap: 5px;
+}
+
+.notes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notes-content {
+    grid-column: span 10; 
+}
+
+.notes-data {
+    grid-column: span 10;
+}
+
+.notes-title {
+    grid-column: span 5;
+}
+
+.notes-btn {
+    grid-column: span 1;
+    padding: 5px;
+}
+
+.notes-text {
+    grid-column: span 5;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
