@@ -15,7 +15,7 @@ class Notes {
         const {id, name, created, category, content, dates} = note
         const editButton = Button.renderButton("editNotesModal", this.editNotesModal.bind(this, note));
         const downloadButton = Button.renderButton("downLoadNotes");
-        const deleteButton = Button.renderButton("deleteNotesModal");
+        const deleteButton = Button.renderButton("deleteNotesModal", this.deleteNotesModal.bind(this, id));
         const li = document.createElement('li')
         const icon = configNotes[category]
         li.id = id
@@ -33,6 +33,10 @@ class Notes {
     }
     editNotesModal(note) {
         Modal.renderModal("editModal", note)
+    }
+    
+    deleteNotesModal(id){
+        Modal.renderModal("deleteModal", id)
     }
 }
 

@@ -1,5 +1,3 @@
-
-
 export const configModals = {
     editModal: {
       title: "Edit Notes",

@@ -1,12 +1,17 @@
 import Form from "../Form/Form.js"
 import { configModals } from "./configModal.js"
 class Modal {
+    constructor(){
+        this.openModalDiv = document.createElement('div');
+        
+    }
     renderModal(id, note) {
+        this.openModalDiv.textContent = ""
         const { title, text } = configModals[id]
         const root = document.querySelector("#root")
-        const openModalDiv = document.createElement('div');
-        openModalDiv.id = id;
-        openModalDiv.className = 'modal';
+        
+        this.openModalDiv.id = id;
+        this.openModalDiv.className = 'modal';
 
         const modalDialogDiv = document.createElement('div');
         modalDialogDiv.className = 'modal-dialog';
@@ -30,20 +35,33 @@ class Modal {
 
         const modalBodyDiv = document.createElement('div');
         modalBodyDiv.className = 'modal-body';
+        modalBodyDiv.textContent = text
 
-        const form = Form.renderEditForm(note, this.closeModal.bind(this, id))
+        if(id === "createModal") {
+            const form = Form.renderCreateForm(this.closeModal.bind(this))
+            modalBodyDiv.append(form)
+        }
+        if(id === "editModal") {
+            const form = Form.renderEditForm(note, this.closeModal.bind(this, id))
+            modalBodyDiv.append(form)
+        }
+        if(id === "deleteModal") {
+            const form = Form.renderDeleteForm(this.closeModal.bind(this, id))
+            modalBodyDiv.append(form)
+        }
+        
 
         modalHeaderDiv.appendChild(modalTitleH3);
         modalHeaderDiv.appendChild(closeButtonA);
-        modalBodyDiv.append(form)
+       
         modalContentDiv.appendChild(modalHeaderDiv);
         modalContentDiv.appendChild(modalBodyDiv);
 
         modalDialogDiv.appendChild(modalContentDiv);
 
-        openModalDiv.appendChild(modalDialogDiv);
+        this.openModalDiv.appendChild(modalDialogDiv);
 
-        root.append(openModalDiv)
+        root.append(this.openModalDiv)
     }
 
     closeModal(id){

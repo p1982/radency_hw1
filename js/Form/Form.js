@@ -2,48 +2,55 @@ import Button from "../Button/Button.js"
 import Input from "../Input/Input.js";
 import API from "../API/API.js";
 import Notes from "../Notes/Notes.js";
+import Select from "../Select/Select.js";
 class Form {
     constructor(){
         this.form = document.createElement('form')
+        
     }
     renderEditForm ({id, name, created, category, content, dates}, onClose) {
+        this.form.textContent = ""
         const btnWrapper = document.createElement('div')
         btnWrapper.className = "btn-wrapper"
         const inputName = Input.renderInput("name", name)
         const inputDate = Input.renderInput("date", created)
         const inputContent = Input.renderInput("content", content)
+        const selectCategory = Select.renderSelect("category", category)
         const editBtn = Button.renderButton("editNotes")
         const cancelBtn = Button.renderButton("cancel")
         cancelBtn.addEventListener("click", onClose)
         btnWrapper.append(editBtn, cancelBtn)
-        this.form.append(inputName, inputDate, inputContent, btnWrapper)
+        this.form.append(inputName, inputDate, inputContent, selectCategory, btnWrapper)
         this.form.addEventListener("submit", this.handleSubmitUpdate.bind(this, onClose, id))
         return this.form
     }
 
     renderDeleteForm (id, onClose) {
+        this.form.textContent = ""
         const btnWrapper = document.createElement('div')
         btnWrapper.className = "btn-wrapper"
         const editBtn = Button.renderButton("editNotes")
         const cancelBtn = Button.renderButton("cancel")
         cancelBtn.addEventListener("click", onClose)
         btnWrapper.append(editBtn, cancelBtn)
-        this.form.append(inputName, inputDate, inputContent, btnWrapper)
+        this.form.append(btnWrapper)
         this.form.addEventListener("submit", this.handleSubmitDelete.bind(this, onClose, id))
         return this.form
     }
 
     renderCreateForm (onClose) {
+        this.form.textContent = ""
         const btnWrapper = document.createElement('div')
         btnWrapper.className = "btn-wrapper"
         const inputName = Input.renderInput("name")
         const inputDate = Input.renderInput("date")
         const inputContent = Input.renderInput("content")
+        const selectCategory = Select.renderSelect("category")
         const createBtn = Button.renderButton("createNotes")
         const cancelBtn = Button.renderButton("cancel")
         cancelBtn.addEventListener("click", onClose)
         btnWrapper.append(createBtn, cancelBtn)
-        this.form.append(inputName, inputDate, inputContent, btnWrapper)
+        this.form.append(inputName, inputDate, inputContent, selectCategory, btnWrapper)
         this.form.addEventListener("submit", this.handleSubmitCreate.bind(this, onClose))
         return this.form
     }
