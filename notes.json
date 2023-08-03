@@ -6,7 +6,8 @@
             "created": "2023-07-31T10:00:00",
             "category": "Task",
             "content": "This is the content of Note 1",
-            "dates": ["2023-09-01", "2023-09-03"]
+            "dates": ["2023-09-01", "2023-09-03"],
+            "archiv": false
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "created": "2023-06-25T11:30:00",
             "category": "Quote",
             "content": "This is the content of Note 2",
-            "dates": ["2023-08-02", "2023-08-04"]
+            "dates": ["2023-08-02", "2023-08-04"],
+            "archiv": false
         },
         {
             "id": 3,  
@@ -22,15 +24,17 @@
             "created": "2023-07-15T14:15:00",
             "category": "Idea",
             "content": "This is the content of Note 3",
-            "dates": ["2023-08-26"]
+            "dates": ["2023-08-26"],
+            "archiv": false
         },
         {
             "id": 4,
             "name": "Note 4",
-            "created": "2023-075-28T21:15:00",
+            "created": "2023-05-28T21:15:00",
             "category": "Quote",
             "content": "This is the content of Note 4",
-            "dates": ["2023-08-04"]
+            "dates": ["2023-08-04"],
+            "archiv": false
         },
         {
             "id": 5,
@@ -38,16 +42,17 @@
             "created": "2023-07-01T14:00:00",
             "category": "Task",
             "content": "This is the content of Note 5",
-            "dates": ["2023-08-17"]
+            "dates": ["2023-08-17"],
+            "archiv": false
         },
         {
             "id": 6,
-            
             "name": "Note 6",
             "created": "2023-07-22T00:15:00",
             "category": "Random Thought",
             "content": "This is the content of Note 6",
-            "dates": ["2023-08-12"]
+            "dates": ["2023-08-12"],
+            "archiv": false
         },
         {
             "id": 7,
@@ -55,7 +60,8 @@
             "created": "2023-07-07T13:15:00",
             "category": "Idea",
             "content": "This is the content of Note 7",
-            "dates": ["2023-09-01", "2023-09-03"]
+            "dates": ["2023-09-01", "2023-09-03"],
+            "archiv": false
         },
         {
             "id": 8,
@@ -63,7 +69,35 @@
             "created": "2023-08-01T13:15:00",
             "category": "Idea",
             "content": "This is the content of Note 8",
-            "dates": ["2023-10-01", "2023-11-03"]
+            "dates": ["2023-10-01", "2023-11-03"],
+            "archiv": false
+        },
+        {
+            "id": 9,
+            "name": "Note 9",
+            "created": "2023-07-22T00:15:00",
+            "category": "Random Thought",
+            "content": "This is the content of Note 9",
+            "dates": ["2023-08-12"],
+            "archiv": true
+        },
+        {
+            "id": 10,
+            "name": "Note 10",
+            "created": "2023-07-07T13:15:00",
+            "category": "Idea",
+            "content": "This is the content of Note 10",
+            "dates": ["2023-09-01"],
+            "archiv": true
+        },
+        {
+            "id": 11,
+            "name": "Note 11",
+            "created": "2023-08-01T13:15:00",
+            "category": "Idea",
+            "content": "This is the content of Note 11",
+            "dates": ["2023-10-01", "2023-11-03"],
+            "archiv": true
         }
     ]
 }

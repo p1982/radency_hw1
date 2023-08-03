@@ -1,7 +1,11 @@
 import { configButtons } from "./configButton.js"
+
+//class button render button dependes on id
 class Button {
+    
+    //render button
     renderButton(configId, cb) {
-        const {id, className, text, type } = configButtons[configId]
+        const { id, className, text, type } = configButtons[configId]
         const button = document.createElement("button")
         button.className = className
         button.insertAdjacentHTML("beforeend", text)
@@ -9,9 +13,6 @@ class Button {
         button.id = id
         button.addEventListener("click", cb)
         return button
-        // return (
-        //     `<button class=${className} type=${type?type:"button"}>${text}</button>`
-        // )
     }
 }
 

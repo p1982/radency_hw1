@@ -1,3 +1,4 @@
+//config buttons
 export const configButtons = {
     createNotes: {
         id: "create-notes",
@@ -8,6 +9,12 @@ export const configButtons = {
     editNotes: {
         id: "edit-notes",
         text: "Edit",
+        type: "submit",
+        className: "btn primary-btn"
+    },
+    deleteNotes: {
+        id: "delete-notes",
+        text: "Delete",
         type: "submit",
         className: "btn primary-btn"
     },
@@ -31,8 +38,13 @@ export const configButtons = {
         text: "<img class='icon'src='./img/icons/free-icon-pen-2007034.png' alt='download icon'/>",
         className: "icon-btn"
     },
-    downLoadNotes: {
-        id: "down-load-notes",
+    archivNotes: {
+        id: "archiv-notes",
+        text: "<img class='icon' src='./img/icons/free-icon-down-arrow-800892.png' alt='edit icon'/>",
+        className: "icon-btn"
+    },
+    archivAllNotes: {
+        id: "archiv-all-notes",
         text: "<img class='icon' src='./img/icons/free-icon-down-arrow-800892.png' alt='edit icon'/>",
         className: "icon-btn"
     },

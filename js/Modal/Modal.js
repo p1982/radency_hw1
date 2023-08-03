@@ -1,15 +1,18 @@
 import Form from "../Form/Form.js"
 import { configModals } from "./configModal.js"
+
+//render diferent modal window dependse id that incomming
 class Modal {
-    constructor(){
+    constructor() {
         this.openModalDiv = document.createElement('div');
-        
     }
+
+    //render modal call form class to render form
     renderModal(id, note) {
         this.openModalDiv.textContent = ""
         const { title, text } = configModals[id]
         const root = document.querySelector("#root")
-        
+
         this.openModalDiv.id = id;
         this.openModalDiv.className = 'modal';
 
@@ -37,23 +40,28 @@ class Modal {
         modalBodyDiv.className = 'modal-body';
         modalBodyDiv.textContent = text
 
-        if(id === "createModal") {
-            const form = Form.renderCreateForm(this.closeModal.bind(this))
+        if (id === "createModal") {
+            const form = Form.renderCreateForm(this.closeModal.bind(this, id))
             modalBodyDiv.append(form)
         }
-        if(id === "editModal") {
+        if (id === "editModal") {
             const form = Form.renderEditForm(note, this.closeModal.bind(this, id))
             modalBodyDiv.append(form)
         }
-        if(id === "deleteModal") {
-            const form = Form.renderDeleteForm(this.closeModal.bind(this, id))
+        if (id === "deleteModal") {
+            const form = Form.renderDeleteForm(note, this.closeModal.bind(this, id))
             modalBodyDiv.append(form)
         }
-        
+
+        if (id === "deleteAllModal") {
+            const form = Form.renderDeleteAllForm(note, this.closeModal.bind(this, id))
+            modalBodyDiv.append(form)
+        }
+
 
         modalHeaderDiv.appendChild(modalTitleH3);
         modalHeaderDiv.appendChild(closeButtonA);
-       
+
         modalContentDiv.appendChild(modalHeaderDiv);
         modalContentDiv.appendChild(modalBodyDiv);
 
@@ -64,7 +72,8 @@ class Modal {
         root.append(this.openModalDiv)
     }
 
-    closeModal(id){
+    //delete modal
+    closeModal(id) {
         const modal = document.getElementById(id)
         modal.remove()
     }

@@ -6,7 +6,8 @@ a {
     text-decoration: none;
 }
 
-a, button {
+a,
+button {
     cursor: pointer;
 }
 
@@ -19,7 +20,17 @@ a, button {
     max-width: 1200px;
 }
 
+section {
+    margin: 10px;
+}
+
 .notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notes-list-archive {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -39,7 +50,7 @@ a, button {
 }
 
 .notes-content {
-    grid-column: span 10; 
+    grid-column: span 10;
 }
 
 .notes-data {
@@ -74,13 +85,27 @@ a, button {
     background-color: rgb(150, 168, 252);
 }
 
+.btn-wrapper {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.notes-btn {
+    background-color: rgb(150, 168, 252);
+    padding: 5px;
+}
+
+.notes-item--header {
+    height: 40px;
+}
+
 .modal {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1050;
     margin: 0;
     padding: 0;
@@ -91,11 +116,12 @@ a, button {
     width: auto;
     margin: 10px;
 }
+
 @media (min-width: 576px) {
-  .modal-dialog {
-      max-width: 500px;
-      margin: 30px auto; 
-  }
+    .modal-dialog {
+        max-width: 500px;
+        margin: 30px auto;
+    }
 }
 
 .modal-content {
@@ -112,15 +138,16 @@ a, button {
     background-color: #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
+    border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
     outline: 0;
 }
+
 @media (min-width: 768px) {
-  .modal-content {
-      -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
-      box-shadow: 0 5px 15px rgba(0,0,0,.5);
-  }
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
 }
 
 .modal-header {
@@ -160,7 +187,8 @@ a, button {
     text-decoration: none;
 }
 
-.close:focus, .close:hover {
+.close:focus,
+.close:hover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -168,11 +196,26 @@ a, button {
 }
 
 .modal-body {
-  position: relative;
+    position: relative;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 15px;
     overflow: auto;
+}
+
+form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form>input {
+    padding: 5px;
+}
+
+form>select {
+    padding: 5px;
 }
