@@ -12,7 +12,7 @@ class Notes {
         this.active = []
         this.activeTask = []
         this.activeIdea = []
-        this.activeQuotee = []
+        this.activeQuote = []
         this.activeRandom = []
         this.archivTask = []
         this.archivIdea = []
@@ -31,10 +31,12 @@ class Notes {
 
     //create states for difere3nt notes group
     createSates() {
+        
         this.activeTask = this.active.filter(item => item.category === "Task")
         this.activeIdea = this.active.filter(item => item.category === "Idea")
-        this.activeQuotee = this.active.filter(item => item.category === "Quote")
+        this.activeQuote = this.active.filter(item => item.category === "Quote")
         this.activeRandom = this.active.filter(item => item.category === "Random Thought")
+        console.log(this.activeTask);
         this.archivTask = this.archiv.filter(item => item.category === "Task")
         this.archivIdea = this.archiv.filter(item => item.category === "Idea")
         this.archivQuote = this.archiv.filter(item => item.category === "Quote")
@@ -105,8 +107,8 @@ class Notes {
             ul.append(body)
         }
 
-        if (this.activeQuotee.length || this.archivQuote.length) {
-            const body = this.renderNotesCard(this.activeQuotee, this.archivQuote, "Quote")
+        if (this.activeQuote.length || this.archivQuote.length) {
+            const body = this.renderNotesCard(this.activeQuote, this.archivQuote, "Quote")
             ul.append(body)
         }
 
@@ -194,7 +196,7 @@ class Notes {
 
         this.active = []
         this.archiv = this.notes
-        this.createNotes()
+        this.init(this.notes)
         const elem = document.querySelectorAll(".notes-list li")
         elem.forEach(li => {
             li.remove()
@@ -244,7 +246,7 @@ class Notes {
             this.updateRenderArchive(category, this.activeIdea, this.archivIdea)
         }
         if (category === "Quote") {
-            this.activeQuotee = this.activeQuotee.filter(item => item.id !== id)
+            this.activeQuote = this.activeQuote.filter(item => item.id !== id)
             this.updateRenderArchive(category, this.activeQuote, this.archivQuote)
         }
         if (category === "Random Thought") {
